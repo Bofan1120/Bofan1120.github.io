@@ -54,6 +54,13 @@ a:link, a:visited, a:hover {
     border-color: #666666;
 }
 
+.pub-thumb {
+    width: 100%;
+    height: 140px;
+    object-fit: contain; 
+    background-color: #fff;
+}
+
 /* open-sans-regular - latin */
 @font-face {
     font-family: 'Open Sans';
