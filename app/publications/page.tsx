@@ -5,16 +5,16 @@ import { profile, publications } from "../data/site";
 
 export const metadata: Metadata = {
   title: "Publications",
-  description: "Selected publications by Bofan Li.",
+  description: "Publications and preprints by Bofan Li and collaborators.",
 };
 
 export default function PublicationsPage() {
   return (
     <main className="page-shell">
       <PageIntro
-        eyebrow={`${publications.length} selected publications`}
+        eyebrow={`${publications.length} publications & preprints`}
         title="Publications"
-        description="Research spanning identity-aware WiFi sensing, multi-user vital-sign monitoring, and wireless authentication."
+        description="Research in wireless sensing and authentication, motion understanding, and generative models."
       />
       <div className="page-actions">
         <a href={profile.scholar} target="_blank" rel="noreferrer">

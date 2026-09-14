@@ -70,11 +70,11 @@ export default function Home() {
 
       <section className="academic-card home-section" id="publications">
         <SectionHeading
-          title="Publications"
+          title="Selected Publications"
           href="/publications"
           linkLabel="View all"
         />
-        <PublicationList items={publications.slice(0, 4)} />
+        <PublicationList items={publications.filter((publication) => publication.authors.split(",")[0].trim() === profile.name)} />
       </section>
 
       <section className="academic-card home-section" id="teaching">
@@ -106,7 +106,11 @@ export default function Home() {
             <article key={`${award.year}-${award.title}`}>
               <span>{award.year}</span>
               <div>
-                <h3>{award.title}</h3>
+                <h3>
+                  {award.href ? (
+                    <a className="award-link" href={award.href} target="_blank" rel="noreferrer">{award.title}</a>
+                  ) : award.title}
+                </h3>
                 <p>{award.organization}</p>
               </div>
             </article>

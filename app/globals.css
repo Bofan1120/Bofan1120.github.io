@@ -167,6 +167,8 @@ svg { flex-shrink: 0; }
 .authors strong { font-weight: 600; color: var(--text); }
 .venue { color: var(--muted); }
 .award-callout { display: flex; align-items: center; gap: 6px; margin: 9px 0 0; color: var(--signal); font-size: 11px; font-weight: 500; }
+.award-callout a, .award-link { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: color-mix(in srgb, currentColor 40%, transparent); }
+.award-callout a:hover, .award-link:hover { color: var(--signal); text-decoration-color: currentColor; }
 .publication-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 13px; }
 .publication-links a { display: inline-flex; align-items: center; gap: 6px; padding: 3px 9px; border: 1px solid #b3cbd7; border-radius: 3px; color: var(--accent); font-size: 10px; transition: background 150ms ease; }
 .publication-links a:hover { background: var(--accent-pale); }
@@ -182,7 +184,6 @@ svg { flex-shrink: 0; }
 .service-list a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .reviewing-assistance { margin-top: 26px; }
 .service-subheading { margin: 0; padding-bottom: 10px; border-bottom: 1px solid var(--line); font-family: var(--serif); font-size: 20px; font-weight: 600; }
-.education-list h3 { font-family: var(--serif); font-size: 19px; }
 .empty-note { margin: 0; padding: 24px 0; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 13px; }
 
 /* Dedicated pages use the same quiet typography as the homepage. */
@@ -199,11 +200,10 @@ svg { flex-shrink: 0; }
 .course-row h2 { margin: 0 0 5px; font-family: var(--serif); font-size: 21px; font-weight: 600; line-height: 1.4; }
 .course-row p, .education-item p, .recognition-list p { margin: 0; color: var(--muted); font-size: 13px; }
 .education-item { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 28px; padding: 26px 0; border-bottom: 1px solid var(--line); }
-.education-item h2 { margin: -3px 0 7px; font-family: var(--serif); font-size: 23px; font-weight: 600; line-height: 1.35; }
 .education-item h3 { margin: 0 0 6px; color: var(--body-text); font-size: 14px; font-weight: 500; }
 .recognition-list article { display: grid; grid-template-columns: 145px minmax(0, 1fr); gap: 28px; padding: 24px 0; border-bottom: 1px solid var(--line); }
 .recognition-year { color: var(--signal); font-family: var(--mono); font-size: 11px; }
-.recognition-list h2 { margin: -3px 0 6px; font-family: var(--serif); font-size: 22px; font-weight: 600; line-height: 1.4; }
+.education-item h2, .recognition-list h2 { margin: -3px 0 6px; font-family: var(--serif); font-size: 22px; font-weight: 600; line-height: 1.4; }
 
 /* Archive controls scale with the publication list. */
 .publication-controls { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
@@ -294,15 +294,13 @@ svg { flex-shrink: 0; }
   .publication-title { font-size: 20px; }
   .simple-list article { grid-template-columns: 1fr; gap: 6px; padding: 17px 0; }
   .simple-list h3 { font-size: 14px; }
-  .education-list h3 { font-size: 19px; }
   .page-shell { padding: 28px 0 36px; }
   .breadcrumb { margin-bottom: 24px; }
   .page-intro { margin-bottom: 24px; }
   .page-intro h1 { font-size: 32px; }
   .page-intro p { font-size: 13px; }
   .course-row, .education-item, .recognition-list article { grid-template-columns: 1fr; gap: 9px; padding: 22px 0; }
-  .course-row h2, .recognition-list h2 { font-size: 20px; }
-  .education-item h2 { font-size: 22px; }
+  .course-row h2, .education-item h2, .recognition-list h2 { font-size: 20px; }
   .publication-controls { align-items: stretch; gap: 14px; }
   .search-field { flex: 1 1 100%; }
   .search-field input { width: 100%; }

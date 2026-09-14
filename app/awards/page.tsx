@@ -20,7 +20,11 @@ export default function AwardsPage() {
           <article key={`${award.year}-${award.title}`}>
             <span className="recognition-year">{award.year}</span>
             <div>
-              <h2>{award.title}</h2>
+              <h2>
+                {award.href ? (
+                  <a className="award-link" href={award.href} target="_blank" rel="noreferrer">{award.title}</a>
+                ) : award.title}
+              </h2>
               <p>{award.organization}</p>
             </div>
           </article>

@@ -26,7 +26,9 @@ export function PublicationList({ items, headingLevel = 3 }: { items: Publicatio
           <div className="publication-copy">
             <div className="publication-meta">
               <span>{publication.shortTitle} · {publication.year}</span>
-              {publication.status === "Accepted" ? <span className="publication-status">Accepted</span> : null}
+              {publication.status && publication.status !== "Published" ? (
+                <span className="publication-status">{publication.status}</span>
+              ) : null}
             </div>
             <Heading className="publication-title">
               {publication.links?.[0] ? (
@@ -43,7 +45,12 @@ export function PublicationList({ items, headingLevel = 3 }: { items: Publicatio
             </p>
             <p className="venue">{publication.venue}</p>
             {publication.award ? (
-              <p className="award-callout">✦ {publication.award}</p>
+              <p className="award-callout">
+                <span aria-hidden="true">✦</span>
+                {publication.awardUrl ? (
+                  <a href={publication.awardUrl} target="_blank" rel="noreferrer">{publication.award}</a>
+                ) : publication.award}
+              </p>
             ) : null}
             {publication.links?.length ? (
               <div className="publication-links">

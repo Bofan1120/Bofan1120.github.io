@@ -24,8 +24,9 @@ export type Publication = {
   year: number;
   image: string;
   imageAlt: string;
-  status?: string;
+  status?: "Published" | "Accepted" | "Preprint";
   award?: string;
+  awardUrl?: string;
   links?: Array<{
     label: string;
     href: string;
@@ -35,6 +36,9 @@ export type Publication = {
     alt: string;
   }>;
 };
+
+export const distinguishedArtifactAwardUrl =
+  "https://sp2026.ieee-security.org/awards_artifacts.html";
 
 export const profile = {
   name: "Bofan Li",
@@ -114,7 +118,7 @@ export const news: NewsItem[] = [
       "Our 2FiA artifact was recognized for clear documentation, reproducibility, and faithful implementation of the paper's core contributions at the 47th IEEE Symposium on Security and Privacy.",
     link: {
       label: "Official award page",
-      href: "https://sp2026.ieee-security.org/awards_artifacts.html",
+      href: distinguishedArtifactAwardUrl,
     },
     images: [
       {
@@ -215,6 +219,49 @@ export const news: NewsItem[] = [
 
 export const publications: Publication[] = [
   {
+    title: "MUGEN: A Unified Framework for Efficient Motion Understanding and Generation",
+    shortTitle: "MUGEN",
+    authors: "Zhankai Ye, Yukai Jin, Bingyang Wei, Bofan Li, Yusen Wu, Fangyi Li, Shangqian Gao, Xin Liu",
+    venue: "arXiv 2026",
+    year: 2026,
+    image: "/images/publications/mugen.jpg",
+    imageAlt: "MUGEN unified framework for motion understanding and generation with a shared language model",
+    status: "Preprint",
+    links: [
+      { label: "Paper", href: "https://arxiv.org/abs/2607.27581" },
+      { label: "Project", href: "https://jye16.github.io/mugen-page/" },
+      { label: "Code", href: "https://github.com/JYe16/MUGEN" },
+    ],
+  },
+  {
+    title: "GeoMotionGPT: Geometry-Aligned Motion Understanding with Large Language Models",
+    shortTitle: "GeoMotionGPT",
+    authors: "Zhankai Ye, Bofan Li, Yukai Jin, Shuoqiu Li, Wei Wang, Yanfu Zhang, Shangqian Gao, Xin Liu",
+    venue: "EMNLP 2026",
+    year: 2026,
+    image: "/images/publications/geomotiongpt.png",
+    imageAlt: "GeoMotionGPT framework aligning motion geometry with language model representations",
+    status: "Accepted",
+    links: [
+      { label: "Paper", href: "https://arxiv.org/abs/2601.07632" },
+      { label: "Code & Dataset", href: "https://github.com/JYe16/GeoMotionGPT" },
+    ],
+  },
+  {
+    title: "ARiSE: Efficient Mesh-Based Action Recognition from Wi-Fi Sensing on Edge Devices",
+    shortTitle: "ARiSE",
+    authors: "Zhankai Ye, Shuoqiu Li, Bofan Li, Yili Ren, Bo Mei, Shangqian Gao, Xin Liu",
+    venue: "IEEE FG 2026",
+    year: 2026,
+    image: "/images/publications/arise.png",
+    imageAlt: "ARiSE mesh-based action recognition architecture with efficient routing for edge devices",
+    status: "Published",
+    links: [
+      { label: "Paper", href: "https://doi.org/10.1109/FG67764.2026.11557074" },
+      { label: "PDF", href: "https://xinliulab.github.io/publication/26fg_arise.pdf" },
+    ],
+  },
+  {
     title: "MURAL-Fi: Multi-User Respiration Authentication Leveraging WiFi",
     shortTitle: "MURAL-Fi",
     authors: "Bofan Li, Xin Liu, Yichao Wang, Yili Ren, Weikuan Yu",
@@ -223,6 +270,9 @@ export const publications: Publication[] = [
     image: "/images/publications/mural-fi.png",
     imageAlt: "MURAL-Fi multi-user respiration authentication overview",
     status: "Published",
+    links: [
+      { label: "Paper", href: "https://doi.org/10.1145/3790111" },
+    ],
   },
   {
     title: "2FiA: Towards WiFi Sensing-Based Authentication with Unique Biometrics",
@@ -234,6 +284,7 @@ export const publications: Publication[] = [
     imageAlt: "2FiA WiFi sensing-based authentication overview",
     status: "Published",
     award: "Distinguished Artifact Award",
+    awardUrl: distinguishedArtifactAwardUrl,
     links: [
       {
         label: "Paper",
@@ -373,7 +424,7 @@ export const education = [
     period: "Jan 2022 – Jun 2026",
     school: "Florida State University",
     degree: "Ph.D. in Computer Science",
-    detail: "Advisor: Prof. Xin Liu · Tallahassee, Florida",
+    detail: "Tallahassee, Florida",
   },
   {
     period: "Aug 2019 – Dec 2021",
@@ -389,11 +440,19 @@ export const education = [
   },
 ];
 
-export const awards = [
+export type Award = {
+  year: string;
+  title: string;
+  organization: string;
+  href?: string;
+};
+
+export const awards: Award[] = [
   {
     year: "2026",
     title: "Distinguished Artifact Award",
     organization: "47th IEEE Symposium on Security and Privacy",
+    href: distinguishedArtifactAwardUrl,
   },
   {
     year: "2026",
