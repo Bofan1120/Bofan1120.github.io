@@ -81,7 +81,7 @@ export default function Home() {
       <section className="academic-card home-section" id="teaching">
         <SectionHeading title="Teaching" href="/teaching" linkLabel="View all" />
         <div className="simple-list">
-          {teaching.slice(0, 3).map((item) => (
+          {teaching.filter((item) => item.featured).slice(0, 3).map((item) => (
             <article key={`${item.term}-${item.code}`}>
               <span>{item.term}</span>
               <div>

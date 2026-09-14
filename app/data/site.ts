@@ -360,6 +360,7 @@ export const teaching = [
     code: "COP3014",
     course: "Introduction to Programming in C++",
     role: "Teaching Assistant / Recitation Lecturer",
+    featured: true,
   },
   {
     term: "Summer 2025",
@@ -383,13 +384,15 @@ export const teaching = [
     term: "Spring 2024",
     code: "COP4530",
     course: "Data Structures",
-    role: "Teaching Assistant",
+    role: "Teaching Assistant / Recitation Lecturer",
+    featured: true,
   },
   {
     term: "Fall 2023",
     code: "CIS4630",
     course: "Computer Security Fundamentals",
-    role: "Teaching Assistant",
+    role: "Teaching Assistant / Invited Lecturer",
+    featured: true,
   },
   {
     term: "Fall 2022",

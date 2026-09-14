@@ -51,6 +51,7 @@ The Demos and Personal pages are already linked in the header. Adding entries to
 - 首页的 **Selected Publications** 自动筛选第一位作者为 `Bofan Li` 的论文；合作论文保留在 Publications 独立页面，无需另外维护两份列表。
 - 论文的获奖链接填写在 `awardUrl`，奖项列表的链接填写在 `href`。Distinguished Artifact Award 的官方地址统一维护在 `distinguishedArtifactAwardUrl`。
 - 添加教学、服务、奖项、教育经历：在对应数组添加记录。Service 与 Awards 可用 `showOnHome: false` 隐藏首页条目，但仍保留独立页面的完整记录。
+- Teaching 首页展示 `featured: true` 的前三条记录，顺序与 `teaching` 数组一致；完整 Teaching 页保留所有课程。当前精选为 Fall 2025 COP3014、Spring 2024 COP4530 和 Fall 2023 CIS4630。
 - 奖项可展开查看 `detail` 与 `images` 配图，`selectivity` 显示评选数字。没有对应照片时使用 `images: []`，之后补图即可；Dean's Award 目前待补照片。研究奖照片上的正式名称保留在说明中，评选数字按本人提供的信息填写。
 - 填写 Demo / Personal：给 `demos` 或 `personal` 添加如下记录即可，不需要改页面代码：
 
@@ -64,7 +65,7 @@ The Demos and Personal pages are already linked in the header. Adding entries to
 }
 ```
 
-可选的 `image`、`date`、`links` 不填时可省略。首页展示最近 5 条可见新闻及额外标记为 `featured` 的新闻、最近 3 条教学经历，论文只展示一作条目；独立页面展示全部记录。Service 的 `href` 用来给会议／期刊名称加超链接；`reviewingAssistance` 用于“Help in Reviewing”，只在 Service 独立页面展示，不显示在首页。
+可选的 `image`、`date`、`links` 不填时可省略。首页展示最近 5 条可见新闻及额外标记为 `featured` 的新闻、3 条精选教学经历，论文只展示一作条目；独立页面展示全部记录。Service 的 `href` 用来给会议／期刊名称加超链接；`reviewingAssistance` 用于“Help in Reviewing”，只在 Service 独立页面展示，不显示在首页。
 
 未公开的内容及配图保存在本地 `drafts/` 目录，并通过 `.gitignore` 排除，不会进入公开 GitHub 仓库或网站发布目录。恢复发布的步骤记录在本地 `drafts/README.md` 中；不要把未公开内容写在将要上传的源码注释里。
 
