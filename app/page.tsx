@@ -2,13 +2,14 @@ import Image from "next/image";
 import { Icon } from "./components/Icon";
 import { LinkedText } from "./components/LinkedText";
 import { ServiceList } from "./components/ServiceList";
+import { AwardList } from "./components/AwardList";
 import { NewsList } from "./components/NewsList";
 import { PublicationList } from "./components/PublicationList";
 import { SectionHeading } from "./components/SectionHeading";
 import {
   awards,
   education,
-  news,
+  homeNews,
   profile,
   publications,
   teaching,
@@ -65,7 +66,7 @@ export default function Home() {
       <section className="academic-card home-section" id="news">
         <SectionHeading title="News" href="/news" linkLabel="View all" />
         <p className="section-note">Recent updates · Select an update for details and photos.</p>
-        <NewsList items={news.slice(0, 5)} compact />
+        <NewsList items={homeNews} compact />
       </section>
 
       <section className="academic-card home-section" id="publications">
@@ -80,7 +81,7 @@ export default function Home() {
       <section className="academic-card home-section" id="teaching">
         <SectionHeading title="Teaching" href="/teaching" linkLabel="View all" />
         <div className="simple-list">
-          {teaching.slice(0, 4).map((item) => (
+          {teaching.slice(0, 3).map((item) => (
             <article key={`${item.term}-${item.code}`}>
               <span>{item.term}</span>
               <div>
@@ -96,26 +97,12 @@ export default function Home() {
 
       <section className="academic-card home-section" id="service">
         <SectionHeading title="Service" href="/service" linkLabel="View page" />
-        <ServiceList />
+        <ServiceList homeOnly />
       </section>
 
       <section className="academic-card home-section" id="awards">
         <SectionHeading title="Awards" href="/awards" linkLabel="View all" />
-        <div className="simple-list">
-          {awards.map((award) => (
-            <article key={`${award.year}-${award.title}`}>
-              <span>{award.year}</span>
-              <div>
-                <h3>
-                  {award.href ? (
-                    <a className="award-link" href={award.href} target="_blank" rel="noreferrer">{award.title}</a>
-                  ) : award.title}
-                </h3>
-                <p>{award.organization}</p>
-              </div>
-            </article>
-          ))}
-        </div>
+        <AwardList items={awards.filter((award) => award.showOnHome !== false)} compact />
       </section>
 
       <section className="academic-card home-section" id="education">

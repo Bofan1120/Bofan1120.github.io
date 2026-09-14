@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageIntro } from "../components/PageIntro";
 import { awards } from "../data/site";
+import { AwardList } from "../components/AwardList";
 
 export const metadata: Metadata = {
   title: "Awards",
@@ -13,23 +14,9 @@ export default function AwardsPage() {
       <PageIntro
         eyebrow="Awards & honors"
         title="Awards"
-        description="Selected recognition for research quality, reproducibility, and academic contribution."
+        description="Recognition for research quality, reproducibility, and academic contribution. Expand an award for details and available photos."
       />
-      <div className="recognition-list">
-        {awards.map((award) => (
-          <article key={`${award.year}-${award.title}`}>
-            <span className="recognition-year">{award.year}</span>
-            <div>
-              <h2>
-                {award.href ? (
-                  <a className="award-link" href={award.href} target="_blank" rel="noreferrer">{award.title}</a>
-                ) : award.title}
-              </h2>
-              <p>{award.organization}</p>
-            </div>
-          </article>
-        ))}
-      </div>
+      <AwardList items={awards} />
     </main>
   );
 }

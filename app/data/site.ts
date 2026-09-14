@@ -6,10 +6,12 @@ export type NewsImage = {
 export type NewsItem = {
   date: string;
   year: number;
-  category: "Milestone" | "Publication" | "Award";
+  category: "Milestone" | "Publication" | "Award" | "Service";
   title: string;
   detail: string;
   images: NewsImage[];
+  featured?: boolean;
+  showOnHome?: boolean;
   link?: {
     label: string;
     href: string;
@@ -89,6 +91,19 @@ export const news: NewsItem[] = [
   {
     date: "Aug 2026",
     year: 2026,
+    category: "Service",
+    title: "Serving on the IEEE INFOCOM 2027 Technical Program Committee",
+    detail:
+      "I am honored to serve on the Technical Program Committee (TPC) for IEEE INFOCOM 2027. Many thanks to Dr. Yanchao Zhang for nominating me!",
+    images: [],
+    link: {
+      label: "IEEE INFOCOM 2027 committees",
+      href: "https://infocom2027.ieee-infocom.org/committees",
+    },
+  },
+  {
+    date: "Aug 2026",
+    year: 2026,
     category: "Milestone",
     title: "Kicked off my postdoctoral journey at Arizona State University",
     detail:
@@ -104,10 +119,23 @@ export const news: NewsItem[] = [
       "I successfully defended my Ph.D. dissertation and became the first Ph.D. graduate from the XL-Stack Lab. I am deeply grateful to my advisor, collaborators, friends, and family for their support throughout this journey.",
     images: [
       {
-        src: "/images/news/lab-group-2026.jpg",
-        alt: "Bofan Li with collaborators at an academic poster session in 2026",
+        src: "/images/news/graduation-2026.jpg",
+        alt: "Bofan Li celebrating graduation with his advisor, family, and friends at Florida State University",
       },
     ],
+  },
+  {
+    date: "Jun 2026",
+    year: 2026,
+    category: "Service",
+    title: "Serving on the ACM MobiCom 2026 Artifact Evaluation Committee",
+    detail:
+      "I am delighted to serve on the Artifact Evaluation Committee (AEC) for ACM MobiCom 2026. Many thanks to Dr. Xin Liu and Dr. Yang Liu for nominating me!",
+    images: [],
+    link: {
+      label: "ACM MobiCom 2026 artifact evaluation committee",
+      href: "https://www.sigmobile.org/mobicom/2026/artifact_cfp.html",
+    },
   },
   {
     date: "May 2026",
@@ -136,6 +164,7 @@ export const news: NewsItem[] = [
     year: 2026,
     category: "Award",
     title: "Best Poster Award at the FSU CS Expo 2026",
+    showOnHome: false,
     detail:
       "I received the Best Poster Award at the Mobile Computing Demo Showcase and FSU CS Expo 2026. I sincerely thank Dr. Xin Liu for his guidance and the FSU Department of Computer Science for organizing the event.",
     images: [
@@ -192,14 +221,10 @@ export const news: NewsItem[] = [
     year: 2025,
     category: "Award",
     title: "Dean's Award for Doctoral Excellence",
+    featured: true,
     detail:
       "I received the Dean's Award for Doctoral Excellence from the Florida State University College of Arts and Sciences.",
-    images: [
-      {
-        src: "/images/profile/bofan-li.jpg",
-        alt: "Portrait of Bofan Li",
-      },
-    ],
+    images: [],
   },
   {
     date: "Jul 2024",
@@ -216,6 +241,12 @@ export const news: NewsItem[] = [
     ],
   },
 ];
+
+// Keep recent updates and explicitly featured older news in chronological order.
+const recentNews = news.filter((item) => item.showOnHome !== false).slice(0, 5);
+export const homeNews = news.filter((item) =>
+  item.showOnHome !== false && (item.featured || recentNews.includes(item))
+);
 
 export const publications: Publication[] = [
   {
@@ -328,7 +359,7 @@ export const teaching = [
     term: "Fall 2025",
     code: "COP3014",
     course: "Introduction to Programming in C++",
-    role: "Teaching Assistant",
+    role: "Teaching Assistant / Recitation Lecturer",
   },
   {
     term: "Summer 2025",
@@ -373,6 +404,7 @@ export type ServiceItem = {
   role: string;
   organization: string;
   href?: string;
+  showOnHome?: boolean;
 };
 
 export const service: ServiceItem[] = [
@@ -392,6 +424,12 @@ export const service: ServiceItem[] = [
     period: "2026",
     role: "Reviewer",
     organization: "ACM IMWUT 2026",
+  },
+  {
+    period: "2026",
+    role: "Reviewer",
+    organization: "IEEE Internet Computing",
+    showOnHome: false,
   },
 ];
 
@@ -445,28 +483,50 @@ export type Award = {
   title: string;
   organization: string;
   href?: string;
+  selectivity?: string;
+  detail: string;
+  images: NewsImage[];
+  showOnHome?: boolean;
 };
 
 export const awards: Award[] = [
   {
     year: "2026",
-    title: "Distinguished Artifact Award",
+    title: "Distinguished Artifact Awards",
     organization: "47th IEEE Symposium on Security and Privacy",
     href: distinguishedArtifactAwardUrl,
+    selectivity: "4 out of 925",
+    detail: "Our 2FiA artifact received a Distinguished Artifact Award at IEEE S&P 2026, recognizing its documentation, reproducibility, and implementation.",
+    images: [
+      { src: "/images/news/distinguished-artifact-certificate.jpg", alt: "IEEE S&P 2026 Distinguished Artifact certificate for 2FiA" },
+      { src: "/images/news/distinguished-artifact-slide.jpg", alt: "IEEE S&P 2026 Distinguished Artifacts announcement slide" },
+    ],
   },
   {
     year: "2026",
-    title: "Graduate Student Research Award",
+    title: "Best Research Assistant Award",
     organization: "Florida State University Department of Computer Science",
+    selectivity: "1 out of 83",
+    detail: "Recognized for research contributions to the FSU Department of Computer Science. The certificate's formal title is Graduate Student Research Award 2026.",
+    images: [
+      { src: "/images/news/graduate-research-award.jpg", alt: "Bofan Li's Graduate Student Research Award 2026 certificate" },
+    ],
   },
   {
     year: "2026",
     title: "Best Poster Award",
     organization: "Mobile Computing Demo Showcase & FSU CS Expo",
+    showOnHome: false,
+    detail: "Best Poster Award at the Mobile Computing Demo Showcase and FSU CS Expo 2026.",
+    images: [
+      { src: "/images/news/cs-expo-best-poster.jpg", alt: "Bofan Li's FSU CS Expo 2026 Best Poster Award certificate" },
+    ],
   },
   {
     year: "2025",
     title: "Dean's Award for Doctoral Excellence",
     organization: "Florida State University College of Arts and Sciences",
+    detail: "I received the Dean's Award for Doctoral Excellence from the Florida State University College of Arts and Sciences in 2025.",
+    images: [],
   },
 ];

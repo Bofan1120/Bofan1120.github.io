@@ -1,5 +1,5 @@
-import Image from "next/image";
 import type { NewsItem } from "../data/site";
+import { ImageGallery } from "./ImageGallery";
 
 export function NewsList({
   items,
@@ -35,25 +35,7 @@ export function NewsList({
                 {item.link.label} ↗
               </a>
             ) : null}
-            <div className={`news-gallery gallery-${item.images.length}`}>
-              {item.images.map((image) => (
-                <a
-                  href={image.src}
-                  target="_blank"
-                  rel="noreferrer"
-                  key={image.src}
-                  aria-label={`Open full-size image: ${image.alt}`}
-                >
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    width={1600}
-                    height={1000}
-                    sizes="(max-width: 700px) calc(100vw - 30px), 620px"
-                  />
-                </a>
-              ))}
-            </div>
+            <ImageGallery images={item.images} />
           </div>
         </details>
       ))}

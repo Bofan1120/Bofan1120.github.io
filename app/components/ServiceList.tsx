@@ -24,14 +24,16 @@ function Records({ items, headingLevel }: { items: ServiceItem[]; headingLevel: 
 export function ServiceList({
   headingLevel = 3,
   showReviewingAssistance = false,
+  homeOnly = false,
 }: {
   headingLevel?: 2 | 3;
   showReviewingAssistance?: boolean;
+  homeOnly?: boolean;
 }) {
   const Heading = headingLevel === 2 ? "h2" : "h3";
   return (
     <>
-      <Records items={service} headingLevel={headingLevel} />
+      <Records items={homeOnly ? service.filter((item) => item.showOnHome !== false) : service} headingLevel={headingLevel} />
       {showReviewingAssistance && reviewingAssistance.length ? (
         <section className="reviewing-assistance">
           <Heading className="service-subheading">Help in Reviewing</Heading>
