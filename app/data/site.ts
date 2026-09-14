@@ -1,0 +1,413 @@
+export type NewsImage = {
+  src: string;
+  alt: string;
+};
+
+export type NewsItem = {
+  date: string;
+  year: number;
+  category: "Milestone" | "Publication" | "Award";
+  title: string;
+  detail: string;
+  images: NewsImage[];
+  link?: {
+    label: string;
+    href: string;
+  };
+};
+
+export type Publication = {
+  title: string;
+  shortTitle: string;
+  authors: string;
+  venue: string;
+  year: number;
+  image: string;
+  imageAlt: string;
+  status?: string;
+  award?: string;
+  links?: Array<{
+    label: string;
+    href: string;
+  }>;
+  badges?: Array<{
+    src: string;
+    alt: string;
+  }>;
+};
+
+export const profile = {
+  name: "Bofan Li",
+  role: "Postdoctoral Scholar",
+  affiliation: "Arizona State University",
+  affiliationUrl: "https://www.asu.edu/",
+  email: "bofanli@asu.edu",
+  scholar:
+    "https://scholar.google.com/citations?user=RVep6W4AAAAJ&hl=en&oi=ao",
+  photo: "/images/profile/bofan-li.jpg",
+  bio: [
+    "I am a Postdoctoral Scholar at Arizona State University, supervised by [Prof. Yanchao Zhang](https://faculty.engineering.asu.edu/yczhang/). I received my Ph.D. in Computer Science from Florida State University, where I was advised by [Prof. Xin Liu](https://xinliulab.github.io/).",
+    "My research focuses on wireless sensing and security. By integrating signal processing and machine learning, I advance wireless sensing beyond single-user settings toward identity-aware multi-user systems through spatial signal modeling.",
+  ],
+  interests: [
+    "Wireless Sensing",
+    "Mobile Security & Privacy",
+    "AI/LLM-powered Mobile Systems",
+    "Integrated Sensing & Communication",
+  ],
+};
+
+export const navItems = [
+  { label: "Home", href: "/" },
+  { label: "News", href: "/news" },
+  { label: "Publications", href: "/publications" },
+  { label: "Teaching", href: "/teaching" },
+  { label: "Service", href: "/service" },
+  { label: "Awards", href: "/awards" },
+  { label: "Education", href: "/education" },
+  { label: "Demos", href: "/demos" },
+  { label: "Personal", href: "/personal" },
+];
+
+// Add an entry to either collection to replace that page's "Coming soon" state.
+export type ExtraEntry = {
+  title: string;
+  description: string;
+  date?: string;
+  image?: NewsImage;
+  links?: Array<{ label: string; href: string }>;
+};
+
+export const demos: ExtraEntry[] = [];
+export const personal: ExtraEntry[] = [];
+
+export const news: NewsItem[] = [
+  {
+    date: "Aug 2026",
+    year: 2026,
+    category: "Milestone",
+    title: "Kicked off my postdoctoral journey at Arizona State University",
+    detail:
+      "I joined Arizona State University as a Postdoctoral Scholar in August 2026, supervised by Prof. Yanchao Zhang. I am excited to begin this new chapter of my research journey!",
+    images: [],
+  },
+  {
+    date: "Jun 2026",
+    year: 2026,
+    category: "Milestone",
+    title: "Successfully defended my Ph.D. dissertation",
+    detail:
+      "I successfully defended my Ph.D. dissertation and became the first Ph.D. graduate from the XL-Stack Lab. I am deeply grateful to my advisor, collaborators, friends, and family for their support throughout this journey.",
+    images: [
+      {
+        src: "/images/news/lab-group-2026.jpg",
+        alt: "Bofan Li with collaborators at an academic poster session in 2026",
+      },
+    ],
+  },
+  {
+    date: "May 2026",
+    year: 2026,
+    category: "Award",
+    title: "2FiA received the IEEE S&P Distinguished Artifact Award",
+    detail:
+      "Our 2FiA artifact was recognized for clear documentation, reproducibility, and faithful implementation of the paper's core contributions at the 47th IEEE Symposium on Security and Privacy.",
+    link: {
+      label: "Official award page",
+      href: "https://sp2026.ieee-security.org/awards_artifacts.html",
+    },
+    images: [
+      {
+        src: "/images/news/distinguished-artifact-certificate.jpg",
+        alt: "IEEE S&P 2026 Distinguished Artifact certificate for 2FiA",
+      },
+      {
+        src: "/images/news/distinguished-artifact-slide.jpg",
+        alt: "IEEE S&P 2026 Distinguished Artifacts announcement slide",
+      },
+    ],
+  },
+  {
+    date: "Apr 2026",
+    year: 2026,
+    category: "Award",
+    title: "Best Poster Award at the FSU CS Expo 2026",
+    detail:
+      "I received the Best Poster Award at the Mobile Computing Demo Showcase and FSU CS Expo 2026. I sincerely thank Dr. Xin Liu for his guidance and the FSU Department of Computer Science for organizing the event.",
+    images: [
+      {
+        src: "/images/news/cs-expo-best-poster.jpg",
+        alt: "Bofan Li's FSU CS Expo 2026 Best Poster Award certificate",
+      },
+    ],
+  },
+  {
+    date: "Apr 2026",
+    year: 2026,
+    category: "Award",
+    title: "Graduate Student Research Award 2026",
+    detail:
+      "I received the Graduate Student Research Award from the Florida State University Department of Computer Science in recognition of my research contributions.",
+    images: [
+      {
+        src: "/images/news/graduate-research-award.jpg",
+        alt: "Bofan Li's Graduate Student Research Award 2026 certificate",
+      },
+    ],
+  },
+  {
+    date: "Jan 2026",
+    year: 2026,
+    category: "Publication",
+    title: "MURAL-Fi was accepted to IMWUT/UbiComp 2026",
+    detail:
+      "Our paper, “MURAL-Fi: Multi-User Respiration Authentication Leveraging WiFi,” was accepted by ACM IMWUT/UbiComp 2026.",
+    images: [
+      {
+        src: "/images/publications/mural-fi.png",
+        alt: "MURAL-Fi multi-user respiration authentication overview",
+      },
+    ],
+  },
+  {
+    date: "Sep 2025",
+    year: 2025,
+    category: "Publication",
+    title: "2FiA was accepted to IEEE S&P 2026",
+    detail:
+      "Our paper, “2FiA: Towards WiFi Sensing-Based Authentication with Unique Biometrics,” was accepted by the 47th IEEE Symposium on Security and Privacy.",
+    images: [
+      {
+        src: "/images/publications/2fia.png",
+        alt: "2FiA WiFi sensing-based authentication overview",
+      },
+    ],
+  },
+  {
+    date: "Aug 2025",
+    year: 2025,
+    category: "Award",
+    title: "Dean's Award for Doctoral Excellence",
+    detail:
+      "I received the Dean's Award for Doctoral Excellence from the Florida State University College of Arts and Sciences.",
+    images: [
+      {
+        src: "/images/profile/bofan-li.jpg",
+        alt: "Portrait of Bofan Li",
+      },
+    ],
+  },
+  {
+    date: "Jul 2024",
+    year: 2024,
+    category: "Publication",
+    title: "SpaceBeat was accepted to IMWUT/UbiComp 2024",
+    detail:
+      "Our paper, “SpaceBeat: Identity-aware Multi-person Vital Signs Monitoring Using Commodity WiFi,” was accepted by ACM IMWUT/UbiComp 2024.",
+    images: [
+      {
+        src: "/images/publications/spacebeat.png",
+        alt: "SpaceBeat identity-aware vital signs monitoring overview",
+      },
+    ],
+  },
+];
+
+export const publications: Publication[] = [
+  {
+    title: "MURAL-Fi: Multi-User Respiration Authentication Leveraging WiFi",
+    shortTitle: "MURAL-Fi",
+    authors: "Bofan Li, Xin Liu, Yichao Wang, Yili Ren, Weikuan Yu",
+    venue: "ACM IMWUT/UbiComp 2026",
+    year: 2026,
+    image: "/images/publications/mural-fi.png",
+    imageAlt: "MURAL-Fi multi-user respiration authentication overview",
+    status: "Published",
+  },
+  {
+    title: "2FiA: Towards WiFi Sensing-Based Authentication with Unique Biometrics",
+    shortTitle: "2FiA",
+    authors: "Bofan Li, Zhankai Ye, Weikuan Yu, Yongning Tang, Xin Liu",
+    venue: "The 47th IEEE Symposium on Security and Privacy (S&P) 2026",
+    year: 2026,
+    image: "/images/publications/2fia.png",
+    imageAlt: "2FiA WiFi sensing-based authentication overview",
+    status: "Published",
+    award: "Distinguished Artifact Award",
+    links: [
+      {
+        label: "Paper",
+        href: "https://www.computer.org/csdl/proceedings-article/sp/2026/606500b617/2bojwh1qN2w",
+      },
+      { label: "Code & Dataset", href: "https://zenodo.org/records/17361618" },
+    ],
+    badges: [
+      {
+        src: "/images/publications/artifact-available.png",
+        alt: "Artifacts Available badge",
+      },
+      {
+        src: "/images/publications/artifact-functional.png",
+        alt: "Artifacts Functional badge",
+      },
+      {
+        src: "/images/publications/results-reproduced.png",
+        alt: "Results Reproduced badge",
+      },
+    ],
+  },
+  {
+    title:
+      "SpaceBeat: Identity-aware Multi-person Vital Signs Monitoring Using Commodity WiFi",
+    shortTitle: "SpaceBeat",
+    authors: "Bofan Li, Yili Ren, Yichao Wang, Jie Yang",
+    venue: "ACM IMWUT/UbiComp 2024",
+    year: 2024,
+    image: "/images/publications/spacebeat.png",
+    imageAlt: "SpaceBeat identity-aware vital signs monitoring overview",
+    status: "Published",
+    links: [
+      { label: "Paper", href: "https://dl.acm.org/doi/10.1145/3678590" },
+    ],
+  },
+];
+
+export const teaching = [
+  {
+    term: "Fall 2025",
+    code: "COP3014",
+    course: "Introduction to Programming in C++",
+    role: "Teaching Assistant",
+  },
+  {
+    term: "Summer 2025",
+    code: "CNT4603",
+    course: "Computer and Network System Administration",
+    role: "Teaching Assistant",
+  },
+  {
+    term: "Spring 2025",
+    code: "CNT4406",
+    course: "Network Security",
+    role: "Teaching Assistant",
+  },
+  {
+    term: "Fall 2024",
+    code: "COP6511",
+    course: "Advanced Operating Systems",
+    role: "Teaching Assistant",
+  },
+  {
+    term: "Spring 2024",
+    code: "COP4530",
+    course: "Data Structures",
+    role: "Teaching Assistant",
+  },
+  {
+    term: "Fall 2023",
+    code: "CIS4630",
+    course: "Computer Security Fundamentals",
+    role: "Teaching Assistant",
+  },
+  {
+    term: "Fall 2022",
+    code: "CIS4630",
+    course: "Computer Security Fundamentals",
+    role: "Teaching Assistant",
+  },
+];
+
+export type ServiceItem = {
+  period: string;
+  role: string;
+  organization: string;
+  href?: string;
+};
+
+export const service: ServiceItem[] = [
+  {
+    period: "2027",
+    role: "Technical Program Committee Member",
+    organization: "IEEE INFOCOM 2027",
+    href: "https://infocom2027.ieee-infocom.org/committees",
+  },
+  {
+    period: "2026",
+    role: "Artifact Evaluation Committee Member",
+    organization: "ACM MobiCom 2026",
+    href: "https://www.sigmobile.org/mobicom/2026/artifact_cfp.html",
+  },
+  {
+    period: "2026",
+    role: "Reviewer",
+    organization: "ACM IMWUT 2026",
+  },
+];
+
+// List assisted reviews separately from formal committee / reviewer appointments.
+export const reviewingAssistance: ServiceItem[] = [
+  {
+    period: "2024",
+    role: "Helped in reviewing",
+    organization: "IEEE INFOCOM 2024",
+  },
+  {
+    period: "2023",
+    role: "Helped in reviewing",
+    organization: "IEEE INFOCOM 2023",
+  },
+  {
+    period: "2023",
+    role: "Helped in reviewing",
+    organization: "ACM Asia Conference on Computer and Communications Security (AsiaCCS) 2023",
+  },
+  {
+    period: "2023",
+    role: "Helped in reviewing",
+    organization: "ACM Transactions on Sensor Networks (TOSN)",
+  },
+];
+
+export const education = [
+  {
+    period: "Jan 2022 – Jun 2026",
+    school: "Florida State University",
+    degree: "Ph.D. in Computer Science",
+    detail: "Advisor: Prof. Xin Liu · Tallahassee, Florida",
+  },
+  {
+    period: "Aug 2019 – Dec 2021",
+    school: "Illinois State University",
+    degree: "M.S. in Information Systems",
+    detail: "Normal, Illinois",
+  },
+  {
+    period: "Aug 2013 – Jul 2017",
+    school: "Xidian University",
+    degree: "B.S. in Computer Science and Technology",
+    detail: "Xi'an, China",
+  },
+];
+
+export const awards = [
+  {
+    year: "2026",
+    title: "Distinguished Artifact Award",
+    organization: "47th IEEE Symposium on Security and Privacy",
+  },
+  {
+    year: "2026",
+    title: "Graduate Student Research Award",
+    organization: "Florida State University Department of Computer Science",
+  },
+  {
+    year: "2026",
+    title: "Best Poster Award",
+    organization: "Mobile Computing Demo Showcase & FSU CS Expo",
+  },
+  {
+    year: "2025",
+    title: "Dean's Award for Doctoral Excellence",
+    organization: "Florida State University College of Arts and Sciences",
+  },
+];
