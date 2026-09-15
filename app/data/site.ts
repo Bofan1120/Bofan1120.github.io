@@ -71,8 +71,9 @@ export const navItems = [
   { label: "Service", href: "/service" },
   { label: "Awards", href: "/awards" },
   { label: "Education", href: "/education" },
-  { label: "Demos", href: "/demos" },
-  { label: "Personal", href: "/personal" },
+  // Temporarily hidden until these pages have content. Uncomment to restore.
+  // { label: "Demos", href: "/demos" },
+  // { label: "Personal", href: "/personal" },
 ];
 
 // Add an entry to either collection to replace that page's "Coming soon" state.

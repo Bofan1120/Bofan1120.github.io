@@ -39,7 +39,7 @@ Add images under `public/images/` and reference them with a path beginning with 
 }
 ```
 
-The Demos and Personal pages are already linked in the header. Adding entries to their collections automatically replaces the coming-soon message.
+The Demos and Personal page code is preserved, but their navigation entries are temporarily commented out in `navItems`. Adding entries to their collections replaces the coming-soon message; uncomment the navigation entries when ready to show them. The Personal footer link follows the same navigation setting.
 
 ## 日常维护
 
@@ -53,7 +53,7 @@ The Demos and Personal pages are already linked in the header. Adding entries to
 - 添加教学、服务、奖项、教育经历：在对应数组添加记录。Service 与 Awards 可用 `showOnHome: false` 隐藏首页条目，但仍保留独立页面的完整记录。
 - Teaching 首页展示 `featured: true` 的前三条记录，顺序与 `teaching` 数组一致；完整 Teaching 页保留所有课程。当前精选为 Fall 2025 COP3014、Spring 2024 COP4530 和 Fall 2023 CIS4630。
 - 奖项可展开查看 `detail` 与 `images` 配图，`selectivity` 显示评选数字。没有对应照片时使用 `images: []`，之后补图即可；Dean's Award 目前待补照片。研究奖照片上的正式名称保留在说明中，评选数字按本人提供的信息填写。
-- 填写 Demo / Personal：给 `demos` 或 `personal` 添加如下记录即可，不需要改页面代码：
+- 填写 Demo / Personal：页面和数据结构已保留，当前暂时隐藏导航入口。给 `demos` 或 `personal` 添加如下记录，再取消 `navItems` 中对应入口的注释即可恢复；Personal 页脚链接会同步恢复：
 
 ```ts
 {

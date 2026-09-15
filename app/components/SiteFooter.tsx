@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { profile } from "../data/site";
+import { navItems, profile } from "../data/site";
 
 export function SiteFooter() {
   return (
@@ -13,7 +13,9 @@ export function SiteFooter() {
         <a href={profile.scholar} target="_blank" rel="noreferrer">
           Google Scholar
         </a>
-        <Link href="/personal">Personal</Link>
+        {navItems.some((item) => item.href === "/personal") ? (
+          <Link href="/personal">Personal</Link>
+        ) : null}
         <a href="#main-content">Back to top ↑</a>
       </div>
       <p className="copyright">© {new Date().getFullYear()} Bofan Li</p>
