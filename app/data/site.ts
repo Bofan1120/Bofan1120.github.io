@@ -308,19 +308,6 @@ export const publications: Publication[] = [
     ],
   },
   {
-    title: "MURAL-Fi: Multi-User Respiration Authentication Leveraging WiFi",
-    shortTitle: "MURAL-Fi",
-    authors: "Bofan Li, Xin Liu, Yichao Wang, Yili Ren, Weikuan Yu",
-    venue: "ACM IMWUT/UbiComp 2026",
-    year: 2026,
-    image: "/images/publications/mural-fi.png",
-    imageAlt: "MURAL-Fi multi-user respiration authentication overview",
-    status: "Published",
-    links: [
-      { label: "Paper", href: "https://doi.org/10.1145/3790111" },
-    ],
-  },
-  {
     title: "2FiA: Towards WiFi Sensing-Based Authentication with Unique Biometrics",
     shortTitle: "2FiA",
     authors: "Bofan Li, Zhankai Ye, Weikuan Yu, Yongning Tang, Xin Liu",
@@ -351,6 +338,19 @@ export const publications: Publication[] = [
         src: "/images/publications/results-reproduced.png",
         alt: "Results Reproduced badge",
       },
+    ],
+  },
+  {
+    title: "MURAL-Fi: Multi-User Respiration Authentication Leveraging WiFi",
+    shortTitle: "MURAL-Fi",
+    authors: "Bofan Li, Xin Liu, Yichao Wang, Yili Ren, Weikuan Yu",
+    venue: "ACM IMWUT/UbiComp 2026",
+    year: 2026,
+    image: "/images/publications/mural-fi.png",
+    imageAlt: "MURAL-Fi multi-user respiration authentication overview",
+    status: "Published",
+    links: [
+      { label: "Paper", href: "https://doi.org/10.1145/3790111" },
     ],
   },
   {
