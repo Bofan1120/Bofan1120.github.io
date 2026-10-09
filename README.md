@@ -71,7 +71,11 @@ The Demos and Personal page code is preserved, but their navigation entries are 
 
 配色在 `app/globals.css` 顶部的 `:root` 中设置：冷调纸白 `#eef3f6`、墨黑 `#0c1418`、蓝色 `#0b6e97`。颜色参考 [wqzhao.org](https://wqzhao.org/)，布局是为本网站独立实现的。正文 Public Sans、标题 Source Serif 4 字体均保存在本地，许可证位于 `public/fonts/`。
 
+字号同样在 `:root` 中集中维护：`--font-reading` 用于介绍正文，`--font-body` 用于列表标题，`--font-detail` / `--font-small` 用于说明和作者信息，`--font-label` / `--font-meta` 用于日期和标签。字号采用 `rem`，兼容浏览器默认字体大小设置；电脑介绍正文约 17px，手机正文约 16px，辅助信息为 12–15px。
+
 合作论文 MUGEN、GeoMotionGPT 和 ARiSE 的作者、会议与配图依据 [XL-Stack Lab](https://xinliulab.github.io/) 的公开论文列表核对（2026-09-14）。原始配图分别为 [MUGEN](https://xinliulab.github.io/Figure/mugen.jpg)、[GeoMotionGPT](https://xinliulab.github.io/Figure/geomotiongpt.png) 和 [ARiSE](https://xinliulab.github.io/Figure/arise.png)，副本存放在 `public/images/publications/`。MUGEN 明确标为预印本。
+
+BFMScan 已依据 [XL-Stack Lab 新网站](https://xlstacklab.github.io/#publications) 的公开信息加入论文列表（2026-10-09），使用 [Paper DOI](https://doi.org/10.1145/3832009)、[Code & Dataset](https://github.com/xlstacklab/26UbiComp_BFMScan) 及[原始配图](https://xlstacklab.github.io/Figure/BFMScan.png)。首页会自动收录这篇一作论文；本次未新增相关新闻或专利内容。
 
 ## Local development
 

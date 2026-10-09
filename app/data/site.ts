@@ -251,6 +251,20 @@ export const homeNews = news.filter((item) =>
 
 export const publications: Publication[] = [
   {
+    title: "BFMScan: Enabling Explicit Angle-Resolved Sensing via Beamforming Feedback Matrix",
+    shortTitle: "BFMScan",
+    authors: "Bofan Li, Zhuoyuan Liu, Zhankai Ye, Weikuan Yu, Xin Liu",
+    venue: "ACM IMWUT/UbiComp 2026",
+    year: 2026,
+    image: "/images/publications/bfmscan.png",
+    imageAlt: "BFMScan angular tracking over time compared with ground truth",
+    status: "Published",
+    links: [
+      { label: "Paper", href: "https://doi.org/10.1145/3832009" },
+      { label: "Code & Dataset", href: "https://github.com/xlstacklab/26UbiComp_BFMScan" },
+    ],
+  },
+  {
     title: "MUGEN: A Unified Framework for Efficient Motion Understanding and Generation",
     shortTitle: "MUGEN",
     authors: "Zhankai Ye, Yukai Jin, Bingyang Wei, Bofan Li, Yusen Wu, Fangyi Li, Shangqian Gao, Xin Liu",
