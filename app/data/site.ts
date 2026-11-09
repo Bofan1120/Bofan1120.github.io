@@ -440,7 +440,7 @@ export const service: ServiceItem[] = [
   {
     period: "2027",
     role: "Technical Program Committee Member",
-    organization: "IEEE ICC 2027 · Communication & Information System Security (CISS)",
+    organization: "IEEE ICC 2027",
     href: icc2027Url,
   },
   {
