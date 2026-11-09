@@ -94,9 +94,8 @@ export const news: NewsItem[] = [
     date: "Nov 2026",
     year: 2026,
     category: "Service",
-    title: "Invited to serve on the IEEE ICC 2027 CISS Technical Program Committee",
-    detail:
-      "I was invited to serve on the Technical Program Committee for the Communication & Information System Security (CISS) Symposium at IEEE ICC 2027. I thank Prof. Yanchao Zhang for his support.",
+    title: "Serving on the IEEE ICC 2027 Technical Program Committee",
+    detail: "Many thanks to Prof. Yanchao Zhang for his support!",
     images: [],
     link: { label: "IEEE ICC 2027", href: icc2027Url },
   },
