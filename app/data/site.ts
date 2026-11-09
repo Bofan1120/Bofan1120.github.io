@@ -41,6 +41,7 @@ export type Publication = {
 
 export const distinguishedArtifactAwardUrl =
   "https://sp2026.ieee-security.org/awards_artifacts.html";
+const icc2027Url = "https://icc2027.ieee-icc.org/";
 
 export const profile = {
   name: "Bofan Li",
@@ -89,6 +90,16 @@ export const demos: ExtraEntry[] = [];
 export const personal: ExtraEntry[] = [];
 
 export const news: NewsItem[] = [
+  {
+    date: "Nov 2026",
+    year: 2026,
+    category: "Service",
+    title: "Invited to serve on the IEEE ICC 2027 CISS Technical Program Committee",
+    detail:
+      "I was invited to serve on the Technical Program Committee for the Communication & Information System Security (CISS) Symposium at IEEE ICC 2027. I thank Prof. Yanchao Zhang for his support.",
+    images: [],
+    link: { label: "IEEE ICC 2027", href: icc2027Url },
+  },
   {
     date: "Aug 2026",
     year: 2026,
@@ -429,8 +440,21 @@ export const service: ServiceItem[] = [
   {
     period: "2027",
     role: "Technical Program Committee Member",
+    organization: "IEEE ICC 2027 · Communication & Information System Security (CISS)",
+    href: icc2027Url,
+  },
+  {
+    period: "2027",
+    role: "Technical Program Committee Member",
     organization: "IEEE INFOCOM 2027",
     href: "https://infocom2027.ieee-infocom.org/committees",
+  },
+  {
+    period: "2027",
+    role: "Reviewer",
+    organization: "IEEE Vehicular Technology Conference (VTC2027-Spring)",
+    href: "https://vtc2027spring.trackchair.com/",
+    showOnHome: false,
   },
   {
     period: "2026",
@@ -442,6 +466,13 @@ export const service: ServiceItem[] = [
     period: "2026",
     role: "Reviewer",
     organization: "ACM IMWUT 2026",
+    showOnHome: false,
+  },
+  {
+    period: "2026",
+    role: "Reviewer",
+    organization: "IEEE Transactions on Networking (ToN)",
+    showOnHome: false,
   },
   {
     period: "2026",

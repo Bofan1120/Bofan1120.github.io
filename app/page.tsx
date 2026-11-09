@@ -96,7 +96,7 @@ export default function Home() {
       </section>
 
       <section className="academic-card home-section" id="service">
-        <SectionHeading title="Service" href="/service" linkLabel="View page" />
+        <SectionHeading title="Service" href="/service" linkLabel="View all" />
         <ServiceList homeOnly />
       </section>
 
